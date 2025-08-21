@@ -1,7 +1,9 @@
-User-agent: *
-Allow: /
-Sitemap: https://elenagianellipsicologa.it/sitemap.xml
-
-# Blocca file di sistema
-Disallow: /google*.html
-Disallow: /.netlify/
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://elenagianellipsicologa.it/</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
