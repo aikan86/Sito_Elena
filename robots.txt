@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Sitemap: https://elenagianellipsicologa.it/sitemap.xml
+
+# Blocca file di sistema
+Disallow: /google*.html
+Disallow: /.netlify/
