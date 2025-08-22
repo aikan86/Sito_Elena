@@ -98,10 +98,10 @@
       gap: 25px;
     }
 
-    .nav-menu a {
+      .nav-menu a {
       color: var(--text-color);
       text-decoration: none;
-            font-weight: 500;
+      font-weight: 500;
       transition: var(--transition);
       position: relative;
     }
@@ -125,15 +125,12 @@
       width: 100%;
     }
 
-    /* Hamburger ottimizzato con fix */
+    /* Hamburger ottimizzato */
     .hamburger {
       display: none;
       flex-direction: column;
       cursor: pointer;
       padding: 5px;
-      background: none;
-      border: none;
-      z-index: 1001;
     }
 
     .hamburger span {
@@ -143,7 +140,6 @@
       margin: 3px 0;
       transition: var(--transition);
       transform-origin: center;
-      display: block;
     }
 
     .hamburger.active span:nth-child(1) {
@@ -226,7 +222,7 @@
     .contatti-grid {
       display: grid;
       grid-template-columns: 1fr 2fr;
-            gap: 40px;
+      gap: 40px;
       align-items: start;
     }
 
@@ -371,7 +367,7 @@
       }
     }
 
-        .fade-in {
+    .fade-in {
       animation: fadeInUp 0.6s ease-out forwards;
     }
 
@@ -383,7 +379,7 @@
     /* Responsive Design Ottimizzato */
     @media (max-width: 768px) {
       .hamburger {
-        display: flex !important;
+        display: flex;
       }
 
       .nav-menu {
@@ -400,7 +396,6 @@
         visibility: hidden;
         transition: var(--transition);
         min-width: 200px;
-        z-index: 999;
       }
 
       .nav-menu.active {
@@ -488,7 +483,7 @@
     <div class="container">
       <div class="hero-content fade-in">
         <p>Sono la dott.ssa Elena Gianelli psicologa specializzanda presso la Scuola di Specializzazione in Psicoterapia ad orientamento cognitivo costruttivista. Svolgo la mia professione presso il mio studio privato con sede a Chiavari (Ge), in cui accolgo la persona con un approccio empatico e di condivisione.</p>
-        <p>Nel mio studio punto ad offrire un ambiente sicuro e di supporto attraverso una alleanza terapeutica basata su empatia, ascolto attento e co-creazione di obiettivi.         Durante le sedute pongo particolare attenzione al modo in cui ciascun individuo costruisce significati, vedute di sé e del mondo, e come tali costrutti influenzino pensieri, emozioni e comportamenti arrivando a costruire con la persona interpretazioni alternative, più funzionali e in linea con i suoi vissuti.</p>
+        <p>Nel mio studio punto ad offrire un ambiente sicuro e di supporto attraverso una alleanza terapeutica basata su empatia, ascolto attento e co-creazione di obiettivi. Durante le sedute pongo particolare attenzione al modo in cui ciascun individuo costruisce significati, vedute di sé e del mondo, e come tali costrutti influenzino pensieri, emozioni e comportamenti arrivando a costruire con la persona interpretazioni alternative, più funzionali e in linea con i suoi vissuti.</p>
         <p>Lavoro con adulti, giovani adulti e anziani e mi occupo di disturbi d'ansia, stress, disturbi psicosomatici, difficoltà emotive, disagi relazionali e molto altro.</p>
         <a href="#prenotazione" class="btn">Richiedi appuntamento</a>
       </div>
@@ -508,7 +503,7 @@
         
         <div class="map-container fade-in">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2832.023222258968!2d9.3051163!3d44.3189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d4fb8b0000001%3A0x123456789abcdef!2sVia%20Martiri%20della%20Liberazione%2067%2C%20Chiavari!5e0!3m2!1sit!2sit!4v1674725034980" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2832.023222258968!2d12.670165315614384!3d44.30014327910344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477ec0a1b0000001%3A0x123456789abcdef!2sVia%20Martiri%20della%20Liberazione%2067%2C%20Chiavari!5e0!3m2!1sit!2sit!4v1674725034980" 
             loading="lazy"
             allowfullscreen="" 
             referrerpolicy="no-referrer-when-downgrade"
@@ -549,7 +544,7 @@
     </div>
   </section>
 
-  <!-- Footer -->
+    <!-- Footer -->
   <footer>
     <div class="container">
       <p>&copy; 2025 Dott.ssa psicologa Elena Gianelli.</p>
@@ -568,41 +563,23 @@
       initScrollAnimations();
       initFormHandler();
       initSmoothScroll();
-      initLazyLoading();
-      preloadCriticalResources();
-      
-      // Performance: rimuovi animazioni per utenti che le preferiscono ridotte
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        document.querySelectorAll('*').forEach(el => {
-          el.style.animationDuration = '0.01ms !important';
-          el.style.animationIterationCount = '1 !important';
-          el.style.transitionDuration = '0.01ms !important';
-        });
-      }
     }
 
-    // Menu Hamburger ottimizzato con fix
+    // Menu Hamburger ottimizzato
     function initHamburgerMenu() {
       const hamburger = document.getElementById('hamburger');
       const navMenu = document.getElementById('navMenu');
       
-      if (!hamburger || !navMenu) {
-        console.error('Hamburger o navMenu non trovati!');
-        return;
-      }
-
-      console.log('Hamburger menu inizializzato');
+      if (!hamburger || !navMenu) return;
 
       hamburger.addEventListener('click', function(e) {
         e.preventDefault();
-        console.log('Hamburger cliccato');
         toggleMenu();
       });
 
       // Chiudi menu quando si clicca su un link
       navMenu.addEventListener('click', function(e) {
         if (e.target.tagName === 'A') {
-          console.log('Link nel menu cliccato, chiudo menu');
           closeMenu();
         }
       });
@@ -619,12 +596,8 @@
       const hamburger = document.getElementById('hamburger');
       const navMenu = document.getElementById('navMenu');
       
-      console.log('Toggle menu chiamato');
       hamburger.classList.toggle('active');
       navMenu.classList.toggle('active');
-      
-      console.log('Hamburger active:', hamburger.classList.contains('active'));
-      console.log('NavMenu active:', navMenu.classList.contains('active'));
     }
 
     function closeMenu() {
@@ -662,8 +635,8 @@
     function initSmoothScroll() {
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-          e.preventDefault(); 
-                    const target = document.querySelector(this.getAttribute('href'));
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
           if (target) {
             const offsetTop = target.offsetTop - 80; // Compensa navbar fissa
             window.scrollTo({
@@ -683,7 +656,7 @@
       form.addEventListener('submit', handleFormSubmit);
     }
 
-    function handleFormSubmit(event) {
+        function handleFormSubmit(event) {
       event.preventDefault();
       
       // Validazione migliorata
@@ -776,12 +749,12 @@
     }
 
     function sendToWhatsApp(data) {
-      const message = `Ciao, sono ${data.nome} (email: ${data.email}${data.telefono ? ', telefono: ' + data.telefono : ''      }).\n\nVorrei richiedere un appuntamento per un colloquio psicologico.\n\n${data.messaggio ? 'Messaggio: ' + data.messaggio : 'Grazie per la disponibilità.'}`;
+      const message = `Ciao, sono ${data.nome} (email: ${data.email}${data.telefono ? ', telefono: ' + data.telefono : ''}).\n\nVorrei richiedere un appuntamento per un colloquio psicologico.\n\n${data.messaggio ? 'Messaggio: ' + data.messaggio : 'Grazie per la disponibilità.'}`;
       
       const encodedMessage = encodeURIComponent(message);
       const whatsappURL = `https://wa.me/393287242500?text=${encodedMessage}`;
       
-      // Mostra feedback all'utente
+           // Mostra feedback all'utente
       showAlert('Reindirizzamento a WhatsApp in corso...', 'success');
       
       // Piccolo delay per far vedere il messaggio
@@ -828,7 +801,7 @@
         alertDiv.style.transform = 'translateX(0)';
       }, 100);
 
-      // Rimozione automatica dopo 15 secondi
+      // Rimozione automatica dopo 4 secondi
       setTimeout(() => {
         alertDiv.style.transform = 'translateX(100%)';
         setTimeout(() => {
@@ -891,7 +864,7 @@
 
     // Gestione della navigazione con tasti
     document.addEventListener('keydown', function(e) {
-      // ESC per chiudere il menu mobile
+            // ESC per chiudere il menu mobile
       if (e.key === 'Escape') {
         closeMenu();
       }
@@ -971,16 +944,35 @@
       progressBar.style.width = (rate * 100) + '%';
     }
 
+    // Inizializzazione completa
+    function initializeApp() {
+      initHamburgerMenu();
+      initScrollAnimations();
+      initFormHandler();
+      initSmoothScroll();
+      initLazyLoading();
+      preloadCriticalResources();
+      
+      // Performance: rimuovi animazioni per utenti che le preferiscono ridotte
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.querySelectorAll('*').forEach(el => {
+          el.style.animationDuration = '0.01ms !important';
+          el.style.animationIterationCount = '1 !important';
+          el.style.transitionDuration = '0.01ms !important';
+        });
+      }
+    }
+
     // Critical CSS loading completato
     document.documentElement.classList.add('js-enabled');
   </script>
 
-  <!-- Schema.org per SEO - CORRETTE LE COORDINATE E L'INDIRIZZO -->
+   <!-- Schema.org per SEO -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Dott.ssa Elena Gianelli - Psicologa",
+    "name": "Dott.sa Elena Gianelli - Psicologa",
     "description": "Psicologa specializzanda a Chiavari. Disturbi d'ansia, stress, difficoltà emotive, disagi relazionali. Approccio cognitivo costruttivista.",
     "provider": {
       "@type": "Person",
@@ -991,7 +983,7 @@
     },
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Via Martiri della Liberazione 67/1",
+      "streetAddress": "Via Martiri della Liberazione 62",
       "addressLocality": "Chiavari",
       "addressRegion": "Liguria",
       "postalCode": "16043",
@@ -999,8 +991,8 @@
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "44.3189",
-      "longitude": "9.3073"
+      "latitude": "44.30014327910344",
+      "longitude": "12.670165315614384"
     },
     "url": "https://www.elenagianelli.it",
     "sameAs": [
