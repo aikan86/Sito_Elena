@@ -125,15 +125,16 @@
       width: 100%;
     }
 
-    /* Hamburger ottimizzato con fix */
+    /* Hamburger ottimizzato con fix completo */
     .hamburger {
       display: none;
       flex-direction: column;
       cursor: pointer;
-      padding: 5px;
+      padding: 8px;
       background: none;
       border: none;
       z-index: 1001;
+      position: relative;
     }
 
     .hamburger span {
@@ -382,10 +383,14 @@
 
     /* Responsive Design Ottimizzato */
     @media (max-width: 768px) {
+      /* FORZA la visualizzazione dell'hamburger */
       .hamburger {
         display: flex !important;
+        background: rgba(255, 152, 0, 0.1); /* Background temporaneo per vedere se appare */
+        border-radius: 5px;
       }
 
+      /* Nascondi il menu desktop */
       .nav-menu {
         position: absolute;
         top: 100%;
@@ -401,12 +406,14 @@
         transition: var(--transition);
         min-width: 200px;
         z-index: 999;
+        display: none; /* Nascosto di default */
       }
 
       .nav-menu.active {
         transform: translateX(0);
         opacity: 1;
         visibility: visible;
+        display: flex; /* Mostra quando attivo */
       }
 
       .nav-menu li {
@@ -432,21 +439,6 @@
 
       .hero {
         min-height: 80vh;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .container {
-        width: 95%;
-      }
-
-      .hero-content {
-        padding: 20px;
-      }
-
-      .contatti-info h2,
-      .form-section h2 {
-        font-size: 2rem;
       }
     }
   </style>
