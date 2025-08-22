@@ -125,30 +125,29 @@
       width: 100%;
     }
 
-    /* Hamburger ottimizzato con fix completo */
+    /* Hamburger menu */
     .hamburger {
       display: none;
       flex-direction: column;
       cursor: pointer;
       padding: 8px;
-      background: none;
+      background: transparent;
       border: none;
       z-index: 1001;
-      position: relative;
     }
 
     .hamburger span {
       width: 25px;
       height: 3px;
       background: var(--text-color);
-      margin: 3px 0;
-      transition: var(--transition);
+      margin: 2px 0;
+      transition: all 0.3s ease;
       transform-origin: center;
       display: block;
     }
 
     .hamburger.active span:nth-child(1) {
-      transform: rotate(45deg) translate(6px, 6px);
+      transform: rotate(45deg) translate(5px, 5px);
     }
 
     .hamburger.active span:nth-child(2) {
@@ -156,7 +155,7 @@
     }
 
     .hamburger.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(6px, -6px);
+      transform: rotate(-45deg) translate(7px, -6px);
     }
 
     /* Sezioni ottimizzate */
@@ -382,63 +381,43 @@
     }
 
     /* Responsive Design Ottimizzato */
-    @media (max-width: 768px) {
-      /* FORZA la visualizzazione dell'hamburger */
+    @media screen and (max-width: 768px) {
       .hamburger {
         display: flex !important;
-        background: rgba(255, 152, 0, 0.1); /* Background temporaneo per vedere se appare */
-        border-radius: 5px;
       }
 
-      /* Nascondi il menu desktop */
       .nav-menu {
-        position: absolute;
-        top: 100%;
-        right: 0;
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 100%;
+        max-width: 300px;
+        height: auto;
         background: var(--bg-light);
         flex-direction: column;
-        padding: 20px;
-        box-shadow: var(--shadow);
-        border-radius: 0 0 10px 10px;
-        transform: translateX(100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: var(--transition);
-        min-width: 200px;
+        padding: 30px 20px;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        transition: right 0.3s ease;
         z-index: 999;
-        display: none; /* Nascosto di default */
       }
 
       .nav-menu.active {
-        transform: translateX(0);
-        opacity: 1;
-        visibility: visible;
-        display: flex; /* Mostra quando attivo */
+        right: 0;
       }
 
       .nav-menu li {
-        margin: 10px 0;
+        margin: 15px 0;
+        text-align: center;
+      }
+
+      .nav-menu a {
+        font-size: 1.1rem;
+        padding: 10px 0;
+        display: block;
       }
 
       .site-title {
         display: none;
-      }
-
-      .contatti-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
-      .map-container {
-        height: 300px;
-      }
-
-      section {
-        padding: 60px 0;
-      }
-
-      .hero {
-        min-height: 80vh;
       }
     }
   </style>
