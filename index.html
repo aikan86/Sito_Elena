@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elena Gianelli - Psicologa a Chiavari</title>
+  <meta name="description" content="Dott.sa Elena Gianelli, psicologa specializzanda a Chiavari. Disturbi d'ansia, stress, difficoltà emotive. Prenota il tuo appuntamento.">
+  <meta name="keywords" content="psicologa Chiavari, Elena Gianelli, psicoterapia, ansia, stress">
+  
+  <!-- Meta geo CORRETTI -->
   <meta name="geo.region" content="IT-LI">
   <meta name="geo.placename" content="Chiavari">
   <meta name="geo.position" content="44.3189;9.3073">
   <meta name="ICBM" content="44.3189, 9.3073">
-  
-  <!-- Keywords più specifiche -->
-  <meta name="keywords" content="psicologa Chiavari, psicologo Chiavari, psicologi Chiavari, psicoterapia Chiavari, Elena Gianelli, disturbi ansia Chiavari, stress Chiavari, psicologa Liguria, consulenza psicologica Chiavari, psicoterapia cognitivo costruttivista">
   
   <!-- Preload font critici -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -101,7 +105,7 @@
     .nav-menu a {
       color: var(--text-color);
       text-decoration: none;
-            font-weight: 500;
+      font-weight: 500;
       transition: var(--transition);
       position: relative;
     }
@@ -125,29 +129,25 @@
       width: 100%;
     }
 
-    /* Hamburger menu */
+    /* Hamburger ottimizzato */
     .hamburger {
       display: none;
       flex-direction: column;
       cursor: pointer;
-      padding: 8px;
-      background: transparent;
-      border: none;
-      z-index: 1001;
+      padding: 5px;
     }
 
     .hamburger span {
       width: 25px;
       height: 3px;
       background: var(--text-color);
-      margin: 2px 0;
-      transition: all 0.3s ease;
+      margin: 3px 0;
+      transition: var(--transition);
       transform-origin: center;
-      display: block;
     }
 
     .hamburger.active span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
+      transform: rotate(45deg) translate(6px, 6px);
     }
 
     .hamburger.active span:nth-child(2) {
@@ -155,7 +155,7 @@
     }
 
     .hamburger.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -6px);
+      transform: rotate(-45deg) translate(6px, -6px);
     }
 
     /* Sezioni ottimizzate */
@@ -226,7 +226,7 @@
     .contatti-grid {
       display: grid;
       grid-template-columns: 1fr 2fr;
-            gap: 40px;
+      gap: 40px;
       align-items: start;
     }
 
@@ -354,7 +354,7 @@
       padding: 30px 0;
     }
 
-    /* Smooth scroll */
+        /* Smooth scroll */
     html {
       scroll-behavior: smooth;
     }
@@ -371,7 +371,7 @@
       }
     }
 
-        .fade-in {
+    .fade-in {
       animation: fadeInUp 0.6s ease-out forwards;
     }
 
@@ -381,43 +381,71 @@
     }
 
     /* Responsive Design Ottimizzato */
-    @media screen and (max-width: 768px) {
+    @media (max-width: 768px) {
       .hamburger {
-        display: flex !important;
+        display: flex;
       }
 
       .nav-menu {
-        position: fixed;
-        top: 70px;
-        right: -100%;
-        width: 100%;
-        max-width: 300px;
-        height: auto;
+        position: absolute;
+        top: 100%;
+        right: 0;
         background: var(--bg-light);
         flex-direction: column;
-        padding: 30px 20px;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-        transition: right 0.3s ease;
-        z-index: 999;
+        padding: 20px;
+        box-shadow: var(--shadow);
+        border-radius: 0 0 10px 10px;
+        transform: translateX(100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        min-width: 200px;
       }
 
       .nav-menu.active {
-        right: 0;
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
       }
 
       .nav-menu li {
-        margin: 15px 0;
-        text-align: center;
-      }
-
-      .nav-menu a {
-        font-size: 1.1rem;
-        padding: 10px 0;
-        display: block;
+        margin: 10px 0;
       }
 
       .site-title {
         display: none;
+      }
+
+      .contatti-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .map-container {
+        height: 300px;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .hero {
+        min-height: 80vh;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: 95%;
+      }
+
+      .hero-content {
+        padding: 20px;
+      }
+
+      .contatti-info h2,
+      .form-section h2 {
+        font-size: 2rem;
       }
     }
   </style>
@@ -459,7 +487,7 @@
     <div class="container">
       <div class="hero-content fade-in">
         <p>Sono la dott.ssa Elena Gianelli psicologa specializzanda presso la Scuola di Specializzazione in Psicoterapia ad orientamento cognitivo costruttivista. Svolgo la mia professione presso il mio studio privato con sede a Chiavari (Ge), in cui accolgo la persona con un approccio empatico e di condivisione.</p>
-        <p>Nel mio studio punto ad offrire un ambiente sicuro e di supporto attraverso una alleanza terapeutica basata su empatia, ascolto attento e co-creazione di obiettivi.         Durante le sedute pongo particolare attenzione al modo in cui ciascun individuo costruisce significati, vedute di sé e del mondo, e come tali costrutti influenzino pensieri, emozioni e comportamenti arrivando a costruire con la persona interpretazioni alternative, più funzionali e in linea con i suoi vissuti.</p>
+                <p>Nel mio studio punto ad offrire un ambiente sicuro e di supporto attraverso una alleanza terapeutica basata su empatia, ascolto attento e co-creazione di obiettivi. Durante le sedute pongo particolare attenzione al modo in cui ciascun individuo costruisce significati, vedute di sé e del mondo, e come tali costrutti influenzino pensieri, emozioni e comportamenti arrivando a costruire con la persona interpretazioni alternative, più funzionali e in linea con i suoi vissuti.</p>
         <p>Lavoro con adulti, giovani adulti e anziani e mi occupo di disturbi d'ansia, stress, disturbi psicosomatici, difficoltà emotive, disagi relazionali e molto altro.</p>
         <a href="#prenotazione" class="btn">Richiedi appuntamento</a>
       </div>
@@ -514,8 +542,7 @@
           <label for="messaggio">Messaggio</label>
           <textarea id="messaggio" name="messaggio" placeholder="Scrivi il tuo messaggio..." rows="5"></textarea>
         </div>
-        
-        <button type="submit" class="submit-btn">Invia Richiesta su WhatsApp</button>
+                <button type="submit" class="submit-btn">Invia Richiesta su WhatsApp</button>
       </form>
     </div>
   </section>
@@ -552,28 +579,21 @@
       }
     }
 
-    // Menu Hamburger ottimizzato con fix
+    // Menu Hamburger ottimizzato
     function initHamburgerMenu() {
       const hamburger = document.getElementById('hamburger');
       const navMenu = document.getElementById('navMenu');
       
-      if (!hamburger || !navMenu) {
-        console.error('Hamburger o navMenu non trovati!');
-        return;
-      }
-
-      console.log('Hamburger menu inizializzato');
+      if (!hamburger || !navMenu) return;
 
       hamburger.addEventListener('click', function(e) {
         e.preventDefault();
-        console.log('Hamburger cliccato');
         toggleMenu();
       });
 
       // Chiudi menu quando si clicca su un link
       navMenu.addEventListener('click', function(e) {
         if (e.target.tagName === 'A') {
-          console.log('Link nel menu cliccato, chiudo menu');
           closeMenu();
         }
       });
@@ -590,12 +610,8 @@
       const hamburger = document.getElementById('hamburger');
       const navMenu = document.getElementById('navMenu');
       
-      console.log('Toggle menu chiamato');
       hamburger.classList.toggle('active');
       navMenu.classList.toggle('active');
-      
-      console.log('Hamburger active:', hamburger.classList.contains('active'));
-      console.log('NavMenu active:', navMenu.classList.contains('active'));
     }
 
     function closeMenu() {
@@ -633,8 +649,8 @@
     function initSmoothScroll() {
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-          e.preventDefault(); 
-                    const target = document.querySelector(this.getAttribute('href'));
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
           if (target) {
             const offsetTop = target.offsetTop - 80; // Compensa navbar fissa
             window.scrollTo({
@@ -645,8 +661,7 @@
         });
       });
     }
-
-    // Form Handler ottimizzato
+        // Form Handler ottimizzato
     function initFormHandler() {
       const form = document.getElementById('contactForm');
       if (!form) return;
@@ -747,10 +762,10 @@
     }
 
     function sendToWhatsApp(data) {
-      const message = `Ciao, sono ${data.nome} (email: ${data.email}${data.telefono ? ', telefono: ' + data.telefono : ''      }).\n\nVorrei richiedere un appuntamento per un colloquio psicologico.\n\n${data.messaggio ? 'Messaggio: ' + data.messaggio : 'Grazie per la disponibilità.'}`;
+      const message = `Ciao, sono ${data.nome} (email: ${data.email}${data.telefono ? ', telefono: ' + data.telefono : ''}).\n\nVorrei richiedere un appuntamento per un colloquio psicologico.\n\n${data.messaggio ? 'Messaggio: ' + data.messaggio : 'Grazie per la disponibilità.'}`;
       
       const encodedMessage = encodeURIComponent(message);
-      const whatsappURL = `https://wa.me/393287242500?text=${encodedMessage}`;
+            const whatsappURL = `https://wa.me/393287242500?text=${encodedMessage}`;
       
       // Mostra feedback all'utente
       showAlert('Reindirizzamento a WhatsApp in corso...', 'success');
@@ -799,7 +814,7 @@
         alertDiv.style.transform = 'translateX(0)';
       }, 100);
 
-      // Rimozione automatica dopo 15 secondi
+      // Rimozione automatica dopo 4 secondi
       setTimeout(() => {
         alertDiv.style.transform = 'translateX(100%)';
         setTimeout(() => {
@@ -807,7 +822,7 @@
             alertDiv.remove();
           }
         }, 300);
-      }, 15000);
+      }, 4000);
     }
 
     // Performance: Lazy loading per immagini
